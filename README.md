@@ -83,6 +83,8 @@ way you normally do.
 Try dragging a connection (for example, **Scale X → Scale Y**). You should see a pale
 curved line follow your cursor, and the connection should actually take when you let go.
 
+![Connection drag working in Cavalry on Linux](docs/connection-drag.gif)
+
 If it works — you're done. Enjoy. 🎉
 
 ## What "point your launcher at it" actually means
