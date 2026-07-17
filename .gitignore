@@ -1,0 +1,17 @@
+# Downloaded Wine source + build output (recreated by install.sh)
+/wine-src/
+/build/
+
+# Installed patched Wine (lives in ~/cavalry-wine by default anyway)
+/wine-install/
+/cavalry-wine/
+
+# Old prebuilt artifacts
+/dist/
+
+# Backups created when editing .desktop launchers
+*.bak
+
+# OS / editor noise
+.DS_Store
+*.swp
