@@ -76,7 +76,7 @@ install_deps() {
       err "then re-run this installer."
       exit 1
     fi
-    dnf_install mingw64-gcc mingw32-gcc \
+    dnf_install mingw64-gcc mingw32-gcc opencl-headers \
       mesa-libGL-devel mesa-libEGL-devel vulkan-loader-devel \
       gnutls-devel libxslt-devel alsa-lib-devel pulseaudio-libs-devel \
       pipewire-devel SDL2-devel cups-devel
@@ -85,18 +85,18 @@ install_deps() {
     sudo apt-get update
     sudo apt-get install -y git
     sudo apt-get build-dep -y wine || warn "build-dep failed — you may need to enable 'Sources' in your software settings."
-    sudo apt-get install -y gcc-mingw-w64 libgl1-mesa-dev libegl1-mesa-dev \
+    sudo apt-get install -y gcc-mingw-w64 opencl-headers libgl1-mesa-dev libegl1-mesa-dev \
       libvulkan-dev libgnutls28-dev libxslt1-dev libasound2-dev \
       libpulse-dev libpipewire-0.3-dev libsdl2-dev libcups2-dev || true
   elif command -v pacman >/dev/null 2>&1; then
     ok "Detected Arch (pacman)."
-    sudo pacman -S --needed --noconfirm git base-devel mingw-w64-gcc mesa \
-      vulkan-icd-loader gnutls libxslt alsa-lib libpulse pipewire sdl2 cups
+    sudo pacman -S --needed --noconfirm git base-devel mingw-w64-gcc opencl-headers \
+      mesa vulkan-icd-loader gnutls libxslt alsa-lib libpulse pipewire sdl2 cups
   elif command -v zypper >/dev/null 2>&1; then
     ok "Detected openSUSE (zypper)."
     sudo zypper install -y git
     sudo zypper install -y -t pattern devel_basis || true
-    sudo zypper install -y gcc Mesa-libGL-devel gnutls-devel libxslt-devel \
+    sudo zypper install -y gcc opencl-headers Mesa-libGL-devel gnutls-devel libxslt-devel \
       alsa-devel libpulse-devel pipewire-devel libSDL2-devel cups-devel || true
   else
     warn "I couldn't recognize your Linux package manager."
