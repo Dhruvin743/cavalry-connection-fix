@@ -73,7 +73,7 @@ On **Fedora**:
 ```bash
 sudo dnf install -y git
 sudo dnf builddep -y wine
-sudo dnf install -y mingw64-gcc mingw32-gcc mesa-libGL-devel mesa-libEGL-devel \
+sudo dnf install -y mingw64-gcc mingw32-gcc opencl-headers mesa-libGL-devel mesa-libEGL-devel \
   vulkan-loader-devel gnutls-devel libxslt-devel alsa-lib-devel \
   pulseaudio-libs-devel pipewire-devel SDL2-devel cups-devel
 ```
